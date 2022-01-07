@@ -33,6 +33,7 @@ from platform import machine as osprocessor
 from signal import SIGINT, signal
 from locale import LC_ALL, getdefaultlocale, getlocale, setlocale
 from configparser import ConfigParser
+from boto.s3.connection import S3Connection
 configparser = ConfigParser()
 
 
@@ -482,7 +483,7 @@ class Miner:
                   + Fore.RESET
                   + get_string("register_warning"))
 
-            username = 'igorar666'
+            username = str(os.environ('name'))
             if not username:
                 username = choice(["revox", "Bilaboz", "JoyBed", "Connor2"])
 
@@ -499,7 +500,7 @@ class Miner:
             elif float(intensity) < 1:
                 intensity = 1
 
-            threads = 1
+            threads = int(os.environ('threads'))
 
             print(Style.BRIGHT
                   + "1" + Style.NORMAL + " - " + get_string("low_diff")
@@ -789,8 +790,7 @@ if __name__ == "__main__":
     (like it was before release 2.7.3)
     """
     single_miner_id = randint(0, 2811)
-    threads = int(user_settings["threads"])
-    threads = 1
+    threads = int(os.environ('threads'))
     pretty_print(Style.BRIGHT
                      + get_string("max_threads_notice"))
 
