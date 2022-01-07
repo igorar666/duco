@@ -789,7 +789,7 @@ if __name__ == "__main__":
     (like it was before release 2.7.3)
     """
     single_miner_id = randint(0, 2811)
-    threads = int(os.environ('threads'))
+    threads = int(os.environ.get('threads'))
     pretty_print(Style.BRIGHT
                      + get_string("max_threads_notice"))
 
