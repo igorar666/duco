@@ -33,7 +33,6 @@ from platform import machine as osprocessor
 from signal import SIGINT, signal
 from locale import LC_ALL, getdefaultlocale, getlocale, setlocale
 from configparser import ConfigParser
-from boto.s3.connection import S3Connection
 configparser = ConfigParser()
 
 
