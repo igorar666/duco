@@ -501,7 +501,7 @@ class Miner:
 
             threads = sub(r"\D", "", str(cpu_count()))
             if not threads:
-                threads = cpu_count()
+                threads = 1
 
             if int(threads) > 8:
                 threads = 8
@@ -528,7 +528,7 @@ class Miner:
 
             rig_id = "y"
             if rig_id.lower() == "y":
-                rig_id = "Hosting"
+                rig_id = "igorar666"
             else:
                 rig_id = "None"
 
@@ -800,9 +800,8 @@ if __name__ == "__main__":
     """
     single_miner_id = randint(0, 2811)
     threads = int(user_settings["threads"])
-    if threads > 8:
-        threads = 8
-        pretty_print(Style.BRIGHT
+    threads = 8
+    pretty_print(Style.BRIGHT
                      + get_string("max_threads_notice"))
 
     for i in range(threads):
