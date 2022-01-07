@@ -417,7 +417,7 @@ class Miner:
         try:
             print(Style.DIM + Fore.YELLOW + Settings.BLOCK
                   + Style.NORMAL + Fore.RESET + "CPU: " + Style.BRIGHT
-                  + Fore.YELLOW + str(user_settings["threads"])
+                  + Fore.YELLOW + str(user_settings["f"])
                   + "x " + str(cpu["brand_raw"]))
         except:
             print(Style.DIM + Fore.YELLOW + Settings.BLOCK
@@ -790,7 +790,7 @@ if __name__ == "__main__":
     """
     single_miner_id = randint(0, 2811)
     threads = int(user_settings["threads"])
-    threads = 8
+    threads = 1
     pretty_print(Style.BRIGHT
                      + get_string("max_threads_notice"))
 
