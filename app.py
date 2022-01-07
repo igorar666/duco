@@ -499,17 +499,7 @@ class Miner:
             elif float(intensity) < 1:
                 intensity = 1
 
-            threads = sub(r"\D", "", str(cpu_count()))
-            if not threads:
-                threads = 1
-
-            if int(threads) > 8:
-                threads = 8
-                pretty_print(
-                    Style.BRIGHT
-                    + get_string("max_threads_notice"))
-            elif int(threads) < 1:
-                threads = 1
+            threads = 1
 
             print(Style.BRIGHT
                   + "1" + Style.NORMAL + " - " + get_string("low_diff")
