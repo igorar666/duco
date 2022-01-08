@@ -508,7 +508,7 @@ class Miner:
                   + "\n" + Style.BRIGHT
                   + "3" + Style.NORMAL + " - " + get_string("net_diff"))
             start_diff = sub(r"\D", "",
-                             "1")
+                             "2")
             if start_diff == "1":
                 start_diff = "LOW"
             elif start_diff == "3":
