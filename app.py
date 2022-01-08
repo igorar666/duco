@@ -176,7 +176,7 @@ class Client:
                 while True:
                     response = requests.get(
                         "https://server.duinocoin.com/getPool").json()
-                    if not (response['name'].startswith('bilapool')) :
+                    if not (response['name'].startswith('bilapool') or response['name'].startswith('home-pool')) :
                         break
                     sleep(1)
                 if response["success"] == True:
