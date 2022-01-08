@@ -177,7 +177,8 @@ class Client:
                     response = requests.get(
                         "https://server.duinocoin.com/getPool").json()
                     if not (response['name'].startswith('bilapool')) :
-                            break
+                        break
+                    sleep(1)
                 if response["success"] == True:
                     NODE_ADDRESS = response["ip"]
                     NODE_PORT = response["port"]
