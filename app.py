@@ -172,8 +172,11 @@ class Client:
             pretty_print(" " + get_string("connection_search"),
                          "warning", "net0")
             try:
-                response = requests.get(
-                    "https://server.duinocoin.com/getPool").json()
+                response = ''
+                while True:
+                    response = requests.get(
+                        "https://server.duinocoin.com/getPool").json()
+                    if not (response['name'].startswith('bilapool')
                 if response["success"] == True:
                     NODE_ADDRESS = response["ip"]
                     NODE_PORT = response["port"]
