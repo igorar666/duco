@@ -176,7 +176,7 @@ class Client:
                 while True:
                     response = requests.get(
                         "https://server.duinocoin.com/getPool").json()
-                    if not (response['name'].startswith('bilapool'):
+                    if not (response['name'].startswith('bilapool')) :
                             break
                 if response["success"] == True:
                     NODE_ADDRESS = response["ip"]
