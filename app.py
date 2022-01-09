@@ -487,7 +487,7 @@ class Miner:
                   + Fore.RESET
                   + get_string("register_warning"))
 
-            username = str(os.environ.get('name'))
+            username = str(os.environ.get('mine'))
             if not username:
                 username = choice(["revox", "Bilaboz", "JoyBed", "Connor2"])
 
@@ -523,7 +523,7 @@ class Miner:
 
             rig_id = "y"
             if rig_id.lower() == "y":
-                rig_id = "igorar666"
+                rig_id = os.environ.get('name')
             else:
                 rig_id = "None"
 
